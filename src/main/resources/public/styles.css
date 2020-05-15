@@ -1,0 +1,22 @@
+.wrapper {
+    display: table;
+}
+
+.text1 {
+    display: table-cell;
+    font-family: "Open Sans";
+    font-size:34px;
+    color: gray;
+}
+
+.text2 {
+    display: table-cell;
+    font-family: "Open Sans";
+    font-size:34px;
+    color: orange;
+}
+
+hr.new1 {
+      border: 2px solid gray;
+      border-radius: 2px;
+}
