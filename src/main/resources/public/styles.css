@@ -16,7 +16,14 @@
     color: orange;
 }
 
-hr.new1 {
+.text3 {
+    display: table-cell;
+    font-family: "Open Sans";
+    font-size:24px;
+    color: #e3e3e3;
+}
+
+hr.divider {
       border: 2px solid gray;
       border-radius: 2px;
 }

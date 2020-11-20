@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8">
-    <title>Route Planner</title>
-</head>
-<body bgcolor="black">
-        <br>
-        <center>
-            <div class="wrapper">
-                <div class="text1">Route</div>
-                <div class="text2">P</div>
-                <div class="text1">lanner</div>
-            </div>
-        </center>
-        <hr class="new1">
-</body>
+    <head>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+        <title>Route Planner</title>
+    </head>
+    <body bgcolor="black">
+            <br>
+            <center>
+                <div class="wrapper">
+                    <div class="text1">Route</div>
+                    <div class="text2">P</div>
+                    <div class="text1">lanner</div>
+                </div>
+                <hr class="divider">
+                <div class="text3">
+                    <form action="/calculateroute" id="index_form" method="post">
+                        <table border="0" cellpadding="10" cellspacing="10">
+                            <tr>
+                                <td>Origin</td>
+                                <td><input form="index_form" name="origin" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Destinations</td>
+                                <td><textarea form="index_form" name="destinations" type="text"></textarea></td>
+                            </tr>
+                            <tr align="center">
+                                <td><input form="index_form" type="submit" value="Submit" /></td>
+                                <td><input form="index_form" type="reset" value="Reset" /></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </center>
+    </body>
 </html>
