@@ -6,7 +6,7 @@
   "containerDefinitions": [
     {
       "name": "route-planner",
-      "image": "jumper/route-planner-core:latest",
+      "image": "<YOUR_AWS_ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/jumper/route-planner-core:latest",
       "resourceRequirements": null,
       "essential": true,
       "portMappings": [
@@ -23,6 +23,6 @@
   "memory": "512",
   "executionRoleArn": "arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/ecsTaskExecutionRole",
   "family": "route-planner-task-definition",
-  "taskRoleArn": "",
+  "taskRoleArn": null,
   "placementConstraints": []
 }
