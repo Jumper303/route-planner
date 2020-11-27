@@ -6,7 +6,7 @@ WORKDIR $APP_HOME
 COPY . $APP_HOME/
 RUN $APP_HOME/gradlew --no-daemon clean build
 
-### Appliaction container
+### Application container
 FROM jtim/docker-docker-compose-jdk-mvn
 USER root
 ENV APP_HOME /usr/src/app
