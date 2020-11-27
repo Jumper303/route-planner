@@ -6,7 +6,7 @@
   "containerDefinitions": [
     {
       "name": "route-planner",
-      "image": "jumper/route-planner-core:00000",
+      "image": "jumper/route-planner-core:latest",
       "resourceRequirements": null,
       "essential": true,
       "portMappings": [
@@ -21,9 +21,8 @@
   "volumes": [],
   "networkMode": "awsvpc",
   "memory": "512",
-  "cpu": "256",
-  "executionRoleArn": "arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/ecs-devops-sandbox-execution-role",
-  "family": "ecs-devops-sandbox-task-definition",
+  "executionRoleArn": "arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/ecsTaskExecutionRole",
+  "family": "route-planner-task-definition",
   "taskRoleArn": "",
   "placementConstraints": []
 }
