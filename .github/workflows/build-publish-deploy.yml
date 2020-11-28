@@ -29,6 +29,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: jumper/route-planner-core
           IMAGE_TAG: ${{ github.sha }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           docker build \
             -f ./Dockerfile \
@@ -36,15 +37,15 @@ jobs:
             -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-#      - name: Push Docker image to AWS ECR Registry
-#        env:
-#          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-#          ECR_REPOSITORY: jumper/route-planner-core
-#          IMAGE_TAG: ${{ github.sha }}
-#        run: |
-#          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-#          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-#
+      - name: Push Docker image to AWS ECR Registry
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: jumper/route-planner-core
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
 #      - name: Fill in the new image ID in the Amazon ECS task definition
 #        id: task-def
 #        uses: aws-actions/amazon-ecs-render-task-definition@v1

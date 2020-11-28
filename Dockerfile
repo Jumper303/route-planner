@@ -10,6 +10,9 @@ RUN $APP_HOME/gradlew --no-daemon clean build
 FROM jtim/docker-docker-compose-jdk-mvn
 USER root
 ENV APP_HOME /usr/src/app
+ARG GOOGLE_API_KEY
+ENV GOOGLE_API_KEY=${GOOGLE_API_KEY}
+
 RUN mkdir -p /route-planner
 COPY --from=build-container $APP_HOME/build/libs/route-planner.jar /route-planner/
 ENTRYPOINT ["/usr/bin/java"]
