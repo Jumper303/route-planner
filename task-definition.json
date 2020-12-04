@@ -18,12 +18,6 @@
           "awslogs-stream-prefix": "ecs"
         }
       },
-      "environmentFiles": [
-        {
-          "value": "arn:aws:s3:::route-planner-configs/route-planner.env",
-          "type": "s3"
-        }
-      ],
       "portMappings": [
         {
           "containerPort": "8080",
