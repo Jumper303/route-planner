@@ -9,6 +9,21 @@
       "image": "176907055532.dkr.ecr.us-west-2.amazonaws.com/jumper/route-planner-core:latest",
       "resourceRequirements": null,
       "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/route-planner-task-definition",
+          "awslogs-region": "us-west-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "environmentFiles": [
+        {
+          "value": "arn:aws:s3:::route-planner-configs/route-planner.env",
+          "type": "s3"
+        }
+      ],
       "portMappings": [
         {
           "containerPort": "8080",
